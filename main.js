@@ -10,7 +10,8 @@ let product = new ProductService(productLoggers);
 
 
 product.add({id: 8, name: "Yastık", unitPrice: 250, stock : 10});
-product.delete(2);
+product.update({id: 3, name: "Mause", unitPrice: 250, stock : 10});
+
 
 console.log(product.getAll())
 
