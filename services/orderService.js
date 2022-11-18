@@ -1,6 +1,5 @@
 import { BaseLogger } from "../crossCuttingConcerns/logging/logger.js";
 import { orders } from "../data/orders.js";
-import { products } from "../data/products.js"
 import ProductService from "./productService.js";
 import UserService from "./userService.js";
 
@@ -18,21 +17,12 @@ export default class OrderService {
         for (const logger of this.loggers) {
             logger.log("OrderService.add method")
         }
-
-        if(!this.userService.getById(order.userId)){
-            console.log("Böyle bir user yok.")
+        
+        if(!this.userService.getById(order.userId) || !this.productService.getById(order.productss.find(product => product.id === product.id).id)){
+            console.log("Böyle bir user veya product yok.")
         }else{
             this.orderList.push(order);
         }
-
-        if(!this.productService.getById(order.productId)){
-            console.log("Böyle bir product yok.")
-        }else{
-            this.orderList.push(order);
-        }
-
-
-
     }
 
     getAll() {
