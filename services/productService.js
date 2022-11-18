@@ -41,7 +41,7 @@ export default class ProductService {
 
     update(product){
         for (const logger of this.loggers) {
-            logger.log("ProductService.delete method")
+            logger.log("ProductService.update method")
         }
    
         let productIndex = products.indexOf(this.productList.find(products => products.id === product.id))
