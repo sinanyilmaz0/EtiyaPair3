@@ -46,9 +46,5 @@ export default class ProductService {
    
         let productIndex = products.indexOf(this.productList.find(products => products.id === product.id))
         this.productList[productIndex] = product
-       
-      
-        //this.delete(product.id)
-        //this.add(product)
     }
 }
